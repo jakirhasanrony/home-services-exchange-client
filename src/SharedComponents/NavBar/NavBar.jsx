@@ -11,7 +11,6 @@ const Navbar = () => {
             .catch()
     }
 
-    // Define the non-logged user navigation links
     const nonLoggedInNavLinks = (
         <>
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/'>Home</NavLink></li>
@@ -21,7 +20,6 @@ const Navbar = () => {
         </>
     );
 
-    // Define the logged-in user navigation links
     const loggedInNavLinks = (
         <>
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/'>Home</NavLink></li>
@@ -39,7 +37,7 @@ const Navbar = () => {
     );
 
     return (
-        <div className="navbar text-lg font-bold text-gray-600 p-8 bg-[#cee3db] lg:px-2 shadow-lg">
+        <div className="navbar mb-2 p-3 text-lg  font-bold text-gray-600 lg:px-2 shadow-lg">
             <div className="navbar-start">
                 <div className="dropdown">
                     <label tabIndex={0} className="btn btn-ghost lg:hidden">
