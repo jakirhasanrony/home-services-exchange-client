@@ -1,10 +1,11 @@
+import ServicesFeatureSection from "./ServicesFeatureSection/ServicesFeatureSection";
 import Slider from "./Slider/Slider";
 
 const Home = () => {
     return (
         <div>
             <Slider></Slider>
-            <h2 className="text-6xl text-center">This is home</h2>
+            <ServicesFeatureSection></ServicesFeatureSection>
         </div>
     );
 };
