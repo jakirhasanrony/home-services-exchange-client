@@ -1,11 +1,12 @@
 import { useEffect, useState } from "react";
 import ServiceCard from "../Home/ServiceCard/ServiceCard";
+import AllServiceCard from "./AllServiceCard/AllServiceCard";
 
 
 const Services = () => {
 
     const [services, setServices] = useState([]);
-    const [displayedServices, setDisplayedServices] = useState(4); 
+    const [displayedServices, setDisplayedServices] = useState(4);
     const [showAllServices, setShowAllServices] = useState(false);
 
     useEffect(() => {
@@ -20,13 +21,13 @@ const Services = () => {
 
     return (
         <div className="my-10">
-           
+
             <div className="m-10 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center">
                 {
-                    services.slice(0, displayedServices).map(service => <ServiceCard
+                    services.slice(0, displayedServices).map(service => <AllServiceCard
                         key={service.service_id}
                         service={service}
-                    > </ServiceCard>)
+                    > </AllServiceCard>)
                 }
             </div>
             {!showAllServices && services.length > displayedServices && (

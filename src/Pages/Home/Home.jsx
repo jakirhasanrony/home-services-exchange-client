@@ -34,7 +34,7 @@ const Home = () => {
             <div className="flex justify-center items-center">
                 {/* <button className="btn bg-black w-1/2  ">block</button> */}
                 <Link to="/services">
-                    <button className="btn btn-outline md:px-20 lg:px-56 bg-black text-white  ">Show All Services</button>
+                    <button className="btn btn-outline md:px-20 lg:px-56 bg-black text-white ">Show All Services</button>
                 </Link>
 
             </div>

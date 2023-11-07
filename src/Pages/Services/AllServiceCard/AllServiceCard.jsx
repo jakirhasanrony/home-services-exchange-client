@@ -2,7 +2,7 @@
 
 import { Link } from "react-router-dom";
 
-const ServiceCard = ({ service }) => {
+const AllServiceCard = ({ service }) => {
     const { _id, service_image, service_name, service_description, button, service_provider_img, service_provider_name, service_area, service_price } = service;
     return (
         <div className="card p-8 bg-[#cee3db]  shadow-xl">
@@ -16,6 +16,9 @@ const ServiceCard = ({ service }) => {
                     <h3 className="font-bold">Price: {service_price}</h3>
 
                 </div>
+                <div className="mb-3 md:w-3/4 flex justify-center items-center">
+                    <p className="font-bold">Service Providing Area: {service_area}</p>
+                </div>
                 <div className="avatar">
                     <div className="w-28 mask mask-squircle">
                         <img src={service_provider_img} />
@@ -25,6 +28,7 @@ const ServiceCard = ({ service }) => {
                 <div className=" md:w-3/4 flex justify-center items-center">
                     <p className="">{service_description}</p>
                 </div>
+
 
 
 
@@ -40,4 +44,4 @@ const ServiceCard = ({ service }) => {
     );
 };
 
-export default ServiceCard;
+export default AllServiceCard;
