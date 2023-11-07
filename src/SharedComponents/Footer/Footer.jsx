@@ -8,7 +8,7 @@ const Footer = () => {
                 <p className="font-bold mt-[-20px]">
                     <br />Providing reliable tech since 1992
                 </p>
-                <p className="font-bold">© 2023 Home Services Exchange Ltd. By jakir Hasan Rony - All right reserved</p>
+                <p className="font-bold">© 2023 Home Services Exchange Ltd. By Jakir Hasan Rony - All right reserved</p>
                 <p className="font-bold">Contact Us: 013XXXXXXXX</p>
                 <p className="font-bold">E-mail Us: homeservicesxcng@gmail.com</p>
             </aside>
