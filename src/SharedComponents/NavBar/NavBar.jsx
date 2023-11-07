@@ -24,7 +24,8 @@ const Navbar = () => {
         <>
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/'>Home</NavLink></li>
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/services'>Services</NavLink></li>
-            <li><button onClick={handleSignOut} className="btn md:text-lg font-bold text-gray-600">Logout</button></li>
+            <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/login'>Login</NavLink></li>
+            {/* <li><button onClick={handleSignOut} className="btn md:text-lg font-bold text-gray-600">Logout</button></li> */}
             <li className="dropdown">
                 <Link to='/dashboard' className="dropdown-toggle text-lg font-bold text-gray-600">Dashboard</Link>
                 <ul className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
@@ -72,9 +73,9 @@ const Navbar = () => {
                         <div>
                             <p className="text-sm md:text-lg font-bold text-gray-500">{user.displayName}</p>
                         </div>
-                        {/* <div>
+                        <div>
                             <button onClick={handleSignOut} className="btn">Sign Out</button>
-                        </div> */}
+                        </div>
                     </div>
                 ) : (
                     <div className="flex justify-end items-center gap-3">

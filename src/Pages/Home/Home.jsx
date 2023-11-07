@@ -3,6 +3,7 @@ import PopularServices from "./PopularServices/PopularServices";
 import ServicesFeatureSection from "./ServicesFeatureSection/ServicesFeatureSection";
 import Slider from "./Slider/Slider";
 import ServiceCard from "./ServiceCard/ServiceCard";
+import { Link } from "react-router-dom";
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -25,15 +26,17 @@ const Home = () => {
             <div className="m-10 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center">
                 {
                     firstFourServices.map(service => <ServiceCard
-                        key={service.id}
+                        key={service.service_id}
                         service={service}
                     > </ServiceCard>)
                 }
             </div>
             <div className="flex justify-center items-center">
                 {/* <button className="btn bg-black w-1/2  ">block</button> */}
-                <button className="btn btn-outline bg-black text-white w-1/2 ">Show All Services</button>
-            
+                <Link to="/services">
+                    <button className="btn btn-outline md:px-20 lg:px-56 bg-black text-white  ">Show All Services</button>
+                </Link>
+
             </div>
 
         </div>
