@@ -5,7 +5,7 @@ import { Link } from "react-router-dom";
 const AllServiceCard = ({ service }) => {
     const { _id, service_image, service_name, service_description, button, service_provider_img, service_provider_name, service_area, service_price } = service;
     return (
-        <div className="card p-8 bg-[#cee3db]  shadow-xl">
+        <div className="card  p-8 bg-[#cee3db]  shadow-xl">
             <figure className="px-10 pt-10">
                 <img src={service_image} alt="" className="rounded-xl" />
             </figure>
@@ -35,7 +35,7 @@ const AllServiceCard = ({ service }) => {
             </div>
             <div className="mb-3">
                 <Link to={`/serviceDetails/${_id}`}>
-                    <button className="btn btn-block ">{button}</button>
+                    <button className="btn btn-block ">View Details</button>
                 </Link>
             </div>
 

@@ -1,12 +1,12 @@
 import { useEffect, useState } from "react";
-import ServiceCard from "../Home/ServiceCard/ServiceCard";
+
 import AllServiceCard from "./AllServiceCard/AllServiceCard";
 
 
 const Services = () => {
 
     const [services, setServices] = useState([]);
-    const [displayedServices, setDisplayedServices] = useState(4);
+    const [displayedServices, setDisplayedServices] = useState(6);
     const [showAllServices, setShowAllServices] = useState(false);
 
     useEffect(() => {

@@ -10,21 +10,21 @@ const JoinOurCommunity = () => {
                 <div className=" mb-8 mx-auto w-1/12 border border-[#cee3db] border-b-2">
                 </div>
             </div>
-            <div className="flex flex-wrap  lg:px-12 justify-center items-center gap-3 ">
+            <div className="flex flex-wrap   lg:px-12 justify-center items-center gap-3 ">
                 <div className="card shadow-2xl md:w-1/4 p-4 border-4  border-[#cee3db]">
                     <img className="mx-auto" src="https://i.ibb.co/f279XpM/image-removebg-preview-9.png" alt="" />
                     <h2 className="font-bold text-center">Exclusive and Private</h2>
-                    <p className="text-center">Welcome to our exclusive and private community where you can showcase your unique services and connect with potential clients who are looking for your expertise. Join our community of service providers and enjoy the benefits of being a part of this exclusive network.</p>
+                    <p className="text-center mb-3">Welcome to our exclusive and private community where you can showcase your unique services and connect with potential clients who are looking for your expertise. Join our community of service providers and enjoy the benefits of being a part of this exclusive network.</p>
                 </div>
                 <div className="card shadow-2xl md:w-1/4 p-4 border-4  border-[#cee3db]">
                     <img className="mx-auto" src="https://i.ibb.co/jZDRKgr/image-removebg-preview-10.png" alt="" />
                     <h2 className="font-bold text-center">Protection & Guarantees</h2>
-                    <p className="text-center">At Home Services Exchange, we understand the importance of trust, security in every home service exchange. That is why we have put in place robust guarantees to ensure your peace of mind, prioritize the safety of your financial transactions.</p>
+                    <p className="text-center mb-3">At Home Services Exchange, we understand the importance of trust, security in every home service exchange. That is why we have put in place robust guarantees to ensure your peace of mind, prioritize the safety of your financial transactions.</p>
                 </div>
                 <div className="card shadow-2xl md:w-1/4 p-4 border-4  border-[#cee3db]">
                     <img className="mx-auto" src="https://i.ibb.co/dt4Q5XK/image-removebg-preview-11.png" alt="" />
                     <h2 className="font-bold text-center">Customized Support</h2>
-                    <p className="text-center">we believe that every user is unique and may require different levels of support. That is why we offer a range of customized support options to cater to your specific needs, ensuring that your experience with our platform is as smooth and personalized as possible.</p>
+                    <p className="text-center mb-3">we believe that every user is unique and may require different levels of support. That is why we offer a range of customized support options to cater to your specific needs, ensuring that your experience with our platform is as smooth and personalized as possible.</p>
                 </div>
 
 
