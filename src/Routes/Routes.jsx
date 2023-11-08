@@ -30,15 +30,11 @@ const router = createBrowserRouter([
                 element: <Registration></Registration>
             },
             {
-                path: '/dashboard',
-                element: <Dashboard></Dashboard>
-            },
-            {
                 path: '/services',
                 element: <Services></Services>
             },
             {
-                path: '/addService',
+                path: '/dashboard/add-services',
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
             {

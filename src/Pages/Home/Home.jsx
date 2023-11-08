@@ -21,14 +21,14 @@ const Home = () => {
 
 
     return (
-        <div className="bg-gray-100 ">
+        <div className="bg-gray-100 mt-[-8px] ">
             <Slider></Slider>
             <ServicesFeatureSection></ServicesFeatureSection>
             <PopularServices></PopularServices>
             <div className="m-10 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center">
                 {
                     firstFourServices.map(service => <ServiceCard
-                        key={service.service_id}
+                        key={service._id}
                         service={service}
                     > </ServiceCard>)
                 }
