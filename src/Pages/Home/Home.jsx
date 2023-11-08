@@ -4,6 +4,7 @@ import ServicesFeatureSection from "./ServicesFeatureSection/ServicesFeatureSect
 import Slider from "./Slider/Slider";
 import ServiceCard from "./ServiceCard/ServiceCard";
 import { Link } from "react-router-dom";
+import JoinOurCommunity from "./JoinOurCommunity/JoinOurCommunity";
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -38,6 +39,7 @@ const Home = () => {
                 </Link>
 
             </div>
+            <JoinOurCommunity></JoinOurCommunity>
 
         </div>
 

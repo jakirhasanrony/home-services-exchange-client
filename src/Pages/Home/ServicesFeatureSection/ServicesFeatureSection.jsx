@@ -2,7 +2,7 @@
 
 const ServicesFeatureSection = () => {
     return (
-        <div className="mt-[-10px] bg-[#f6efea] w-full px-8">
+        <div className="mt-[-10px] bg-[#f6efea] shadow-lg w-full px-8">
             
             <div className=" pt-8 flex justify-center items-center">
                 <img src="https://i.ibb.co/zfQgt02/image-removebg-preview-8.png" alt="" />

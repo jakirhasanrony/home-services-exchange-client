@@ -1,7 +1,7 @@
 
 import Swal from 'sweetalert2'
 const AddService = () => {
-    const handleAddProduct = event => {
+    const handleAddService = event => {
         event.preventDefault();
 
         const form = event.target;
@@ -50,7 +50,7 @@ const AddService = () => {
         <div className="card p-24 max-w-5xl mx-auto my-10 bg-base-100 shadow-xl " style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
             <div className="  ">
                 <h2 className="text-xl md:text-3xl text-center pb-10 font-extrabold">Add Service Here</h2>
-                <form onSubmit={handleAddProduct}>
+                <form onSubmit={handleAddService}>
                     {/* service name and image row */}
                     <div className="md:flex mb-8">
                         <div className="form-control md:w-1/2">
