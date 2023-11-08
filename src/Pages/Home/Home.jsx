@@ -5,6 +5,7 @@ import Slider from "./Slider/Slider";
 import ServiceCard from "./ServiceCard/ServiceCard";
 import { Link } from "react-router-dom";
 import JoinOurCommunity from "./JoinOurCommunity/JoinOurCommunity";
+import MemberPortrait from "./MemberPortrait/MemberPortrait";
 
 const Home = () => {
     const [services, setServices] = useState([]);
@@ -20,7 +21,7 @@ const Home = () => {
 
 
     return (
-        <div className="bg-gray-100 pb-6">
+        <div className="bg-gray-100 ">
             <Slider></Slider>
             <ServicesFeatureSection></ServicesFeatureSection>
             <PopularServices></PopularServices>
@@ -40,6 +41,7 @@ const Home = () => {
 
             </div>
             <JoinOurCommunity></JoinOurCommunity>
+            <MemberPortrait></MemberPortrait>
 
         </div>
 
