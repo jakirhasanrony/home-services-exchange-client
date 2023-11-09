@@ -2,11 +2,12 @@ import { useContext, useEffect, useState } from "react";
 import { AuthContext } from "../../Providers/AuthProviders";
 import MyAddedCard from "./MyAddedCard";
 import { Helmet } from "react-helmet";
+import Swal from "sweetalert2";
 
 const MyAddedService = () => {
     const { user } = useContext(AuthContext);
     const [addedServices, setAddedServices] = useState([]);
-    const url = `https://home-services-exchange-server.vercel.app/added-services?service_provider_email=${user?.email}`;
+    const url = `http://localhost:5000/added-services?service_provider_email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -15,23 +16,35 @@ const MyAddedService = () => {
     }, [url]);
 
     const handleDelete = id => {
-        const proceed = confirm('Are you sure you wanna delete?');
-        if (proceed) {
-            fetch(`https://home-services-exchange-server.vercel.app/services/${id}`, {
-                method: 'DELETE'
-            })
-                .then(res => res.json())
-                .then(data => {
-                    console.log(data);
-                    if (data.deletedCount > 0) {
-                        alert('deleted successfully')
-                        const remaining = addedServices.filter(addService => addService._id !== id);
-                        setAddedServices(remaining);
-                    }
+        Swal.fire({
+            title: "Are you sure?",
+            text: "You won't be able to revert this!",
+            icon: "warning",
+            showCancelButton: true,
+            confirmButtonColor: "#3085d6",
+            cancelButtonColor: "#d33",
+            confirmButtonText: "Yes, delete it!"
+        }).then((result) => {
+            if (result.isConfirmed) {
+                fetch(`http://localhost:5000/services/${id}`, {
+                    method: 'DELETE'
                 })
-        }
-
-    }
+                    .then(res => res.json())
+                    .then(data => {
+                        console.log(data);
+                        if (data.deletedCount > 0) {
+                            Swal.fire({
+                                title: "Deleted!",
+                                text: "Your file has been deleted.",
+                                icon: "success"
+                            });
+                            const remaining = addedServices.filter(addService => addService._id !== id);
+                            setAddedServices(remaining);
+                        }
+                    });
+            }
+        });
+    };
 
 
 

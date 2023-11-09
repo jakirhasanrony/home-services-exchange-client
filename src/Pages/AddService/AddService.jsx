@@ -28,7 +28,7 @@ const AddService = () => {
         console.log(newProduct);
 
         // send data to the server
-        fetch('https://home-services-exchange-server.vercel.app/services', {
+        fetch('http://localhost:5000/services', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'

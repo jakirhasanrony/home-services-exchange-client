@@ -31,7 +31,7 @@ const UpdateService = () => {
         console.log(newService);
 
         // send data to the server
-        fetch(`https://home-services-exchange-server.vercel.app/services/${_id}`, {
+        fetch(`http://localhost:5000/services/${_id}`, {
             method: "PUT",
             headers: {
                 'content-type': 'application/json'
