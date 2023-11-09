@@ -55,7 +55,7 @@ const AddService = () => {
     }
 
     return (
-        <div className="card p-24 max-w-5xl mx-auto my-10 bg-base-100 shadow-xl " style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
+        <div className=" mt-[-8px] p-24 w-full mx-auto bg-base-100 shadow-xl " style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
             <div className="  ">
                 <h2 className="text-xl md:text-3xl text-center pb-10 font-extrabold">Add Service Here</h2>
                 <form onSubmit={handleAddService}>

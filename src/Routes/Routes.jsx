@@ -10,6 +10,7 @@ import AddService from "../Pages/AddService/AddService";
 import ServiceDetailsCard from "../Pages/Services/AllServiceCard/ServiceDetailsCard/ServiceDetailsCard";
 import MyAddedService from "../Pages/MyAddedService/MyAddedService";
 import MySchedules from "../Pages/MySchedules/MySchedules";
+import UpdateService from "../Pages/MyAddedService/UpdateService/UpdateService";
 
 const router = createBrowserRouter([
     {
@@ -33,6 +34,11 @@ const router = createBrowserRouter([
             {
                 path: '/services',
                 element: <Services></Services>
+            },
+            {
+                path: '/update/:id',
+                element:<PrivateRoute> <UpdateService></UpdateService></PrivateRoute>,
+                loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
             },
             {
                 path: '/dashboard/add-services',

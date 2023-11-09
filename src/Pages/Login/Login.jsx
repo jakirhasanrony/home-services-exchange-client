@@ -65,9 +65,9 @@ const Login = () => {
     }
 
     return (
-        <div className="card w-3/4 mx-auto my-10 bg-base-100 shadow-xl " style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
+        <div className=" mt-[-8px] w-full mx-auto  bg-base-100  " style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
 
-            <div className="my-10">
+            <div className="p-10">
                 <div className="py-10" >
                     <h2 className="text-3xl font-bold text-center my-10">PLease Login</h2>
                     <form onSubmit={handleLogin} className="mx-auto p-12 md:w-3/4 lg:w-1/2">

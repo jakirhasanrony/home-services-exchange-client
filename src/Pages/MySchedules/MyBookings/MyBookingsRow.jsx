@@ -3,7 +3,7 @@ const MyBookingsRow = ({ booking }) => {
     const { service_name, service_image, service_price, date, service_provider_img } = booking;
     return (
         <tr>
-            <td>
+            {/* <td>
                 <div className="flex items-center space-x-3 p-6">
                     <div className="avatar">
                         <div className="mask mask-squircle w-12 h-12">
@@ -12,7 +12,7 @@ const MyBookingsRow = ({ booking }) => {
                     </div>
 
                 </div>
-            </td>
+            </td> */}
             <td>
                 {service_name}
             </td>

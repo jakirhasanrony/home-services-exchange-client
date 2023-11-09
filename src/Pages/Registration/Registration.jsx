@@ -80,7 +80,7 @@ const Registration = () => {
     }
 
     return (
-        <div className="card w-3/4 mx-auto my-10 bg-base-100 shadow-xl " style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
+        <div className="mt-[-8px] w-full mx-auto   " style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
             <div className="py-10" >
                 <h2 className="text-3xl font-bold text-center my-10">PLease Register</h2>
                 <form onSubmit={handleRegister} className="mx-auto p-12 md:w-3/4 lg:w-1/2">

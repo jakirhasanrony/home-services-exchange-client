@@ -18,7 +18,7 @@ const Navbar = () => {
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/login'>Login</NavLink></li>
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/register'>Registration</NavLink></li>
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/dashboard/add-services'>Add Service</NavLink></li>
-            <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/myAddedServices'>My Added Services</NavLink></li>
+            {/* <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/myAddedServices'>My Added Services</NavLink></li> */}
         </>
     );
 

@@ -23,7 +23,8 @@ const MySchedules = () => {
     }, [url, url2])
     console.log(user?.service_provider_email);
     return (
-        <div>
+        <div className="mx-auto">
+
             <div>
                 <div className="mt-[-8px]" style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
                     <div className="">
@@ -40,12 +41,11 @@ const MySchedules = () => {
                                 <table className="table">
                                     <thead>
                                         <tr>
-                                            <th>Service Image</th>
+                                            {/* <th>Service Image</th> */}
                                             <th>Service Name</th>
                                             <th>Service Price</th>
                                             <th>Date</th>
                                             <th>Service Provider</th>
-                                           
                                         </tr>
                                     </thead>
                                     <tbody>
@@ -83,7 +83,7 @@ const MySchedules = () => {
                                     <thead>
                                         <tr>
                                             <th>Service Image</th>
-                                            <th>Service Name</th>
+                                            {/* <th>Service Name</th> */}
                                             <th>Service Price</th>
                                             <th>Date</th>
                                             {/* <th>Service Provider</th> */}

@@ -30,9 +30,9 @@ const OthersBooking = ({ otherBooking }) => {
 
                 </div>
             </td>
-            <td>
+            {/* <td>
                 {service_name}
-            </td>
+            </td> */}
             <td>{service_price}</td>
             <td>{date}</td>
             {/* <td>
