@@ -9,9 +9,9 @@ const MySchedules = () => {
     const [bookings, setBookings] = useState([]);
     const [othersBookings, setOthersBookings] = useState([]);
 
-    const url = `http://localhost:5000/bookings?email=${user?.email}`;
+    const url = `https://home-services-exchange-server.vercel.app/bookings?email=${user?.email}`;
 
-    const url2 = `http://localhost:5000/other-bookings?service_provider_email=${user?.email}`;
+    const url2 = `https://home-services-exchange-server.vercel.app/other-bookings?service_provider_email=${user?.email}`;
     useEffect(() => {
         fetch(url, { credentials: 'include' })
             .then(res => res.json())

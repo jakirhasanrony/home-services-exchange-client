@@ -45,7 +45,7 @@ const ServiceDetailsCard = () => {
         console.log(newService);
 
         // send data to the server
-        fetch('http://localhost:5000/bookings', {
+        fetch('https://home-services-exchange-server.vercel.app/bookings', {
             method: "POST",
             headers: {
                 'content-type': 'application/json'
@@ -63,7 +63,7 @@ const ServiceDetailsCard = () => {
                     //     icon: 'success',
                     //     confirmButtonText: 'Cool'
                     // })
-                    setShowSuccessAlert(true);
+                  
 
                 }
                 form.reset();
@@ -195,6 +195,7 @@ const ServiceDetailsCard = () => {
                                 </div>
 
                             </div>
+                            
                             <input className="btn btn-block text-black font-bold bg-[#cee3db] " type="submit" value="Purchase This Service" />
                         </form>
                     </div>
@@ -207,7 +208,7 @@ const ServiceDetailsCard = () => {
                 </div>
             </dialog>
             {showSuccessAlert && (
-                <div className="sweet-alert-popup" style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 9999, background: 'white', padding: '20px', border: '1px solid #ccc', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}>
+                <div className="sweet-alert-popup z-20" style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', background: 'white', padding: '20px', border: '1px solid #ccc', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}>
                     <h3 style={{ color: 'green', textAlign: 'center' }}>Success!</h3>
                     <p style={{ textAlign: 'center' }}>Thank you for purchasing</p>
                     <button onClick={() => setShowSuccessAlert(false)}>OK</button>
