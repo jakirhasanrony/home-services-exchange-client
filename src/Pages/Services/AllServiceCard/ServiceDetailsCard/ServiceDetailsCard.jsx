@@ -33,14 +33,14 @@ const ServiceDetailsCard = () => {
         const service_name = form.service_name.value;
         const service_image = form.service_image.value;
         const service_provider_email = form.service_provider_email.value;
-        const user_email = form.user_email.value;
+        const email = form.user_email.value;
         const service_price = form.service_price.value;
         const date = form.date.value;
         const instruction = form.instruction.value;
 
 
 
-        const newService = { service_name, service_image, service_provider_email, user_email, service_price, date, instruction, service_provider_img }
+        const newService = { service_name, service_image, service_provider_email, email, service_price, date, instruction, service_provider_img }
         console.log(newService);
 
         // send data to the server
@@ -174,7 +174,7 @@ const ServiceDetailsCard = () => {
                                         <span className="label-text">Service Taking Date</span>
                                     </label>
                                     <label className="input-group">
-                                        <input name="date" type="text" required placeholder="enter the date on which you want this service" className="input input-bordered w-full" />
+                                        <input name="date" type="date" required placeholder="enter the date on which you want this service" className="input input-bordered w-full" />
                                     </label>
                                 </div>
                             </div>

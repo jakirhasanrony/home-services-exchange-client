@@ -8,6 +8,8 @@ import ErrorElement from "../ErrorElement/ErrorElement";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";
 import AddService from "../Pages/AddService/AddService";
 import ServiceDetailsCard from "../Pages/Services/AllServiceCard/ServiceDetailsCard/ServiceDetailsCard";
+import MyAddedService from "../Pages/MyAddedService/MyAddedService";
+import MySchedules from "../Pages/MySchedules/MySchedules";
 
 const router = createBrowserRouter([
     {
@@ -37,9 +39,17 @@ const router = createBrowserRouter([
                 element: <PrivateRoute><AddService></AddService></PrivateRoute>
             },
             {
+                path: '/dashboard/my-schedules',
+                element: <PrivateRoute><MySchedules></MySchedules></PrivateRoute>
+            },
+            {
                 path: '/serviceDetails/:id',
                 element: <PrivateRoute><ServiceDetailsCard></ServiceDetailsCard></PrivateRoute>,
                 loader: ({ params }) => fetch(`http://localhost:5000/services/${params.id}`)
+            },
+            {
+                path: '/myAddedServices',
+                element: <PrivateRoute><MyAddedService></MyAddedService></PrivateRoute>
             },
         ]
     },
