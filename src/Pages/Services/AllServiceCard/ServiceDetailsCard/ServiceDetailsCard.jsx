@@ -1,26 +1,77 @@
-import { useRef } from "react";
+import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
+import { AuthContext } from "../../../../Providers/AuthProviders";
+import Swal from "sweetalert2";
 
 
 const ServiceDetailsCard = () => {
-    const singleService = useLoaderData();
-    const { _id, service_image, service_name, service_description, service_provider_img, service_provider_name, service_area, service_price } = singleService;
 
-    const modalRef = useRef();
+    const { user } = useContext(AuthContext);
+    console.log(user);
+
+    const singleService = useLoaderData();
+    const { _id, service_image, service_name, service_description, service_provider_img, service_provider_name, service_area, service_price, service_provider_email } = singleService;
+
+    const [isModalOpen, setIsModalOpen] = useState(false);
+    const [showSuccessAlert, setShowSuccessAlert] = useState(false);
+
 
     const openModal = () => {
-        if (modalRef.current) {
-            modalRef.current.showModal();
-        }
+        console.log('clicked');
+        setIsModalOpen(true);
     };
 
     const closeModal = () => {
-        if (modalRef.current) {
-            modalRef.current.close();
-        }
+        setIsModalOpen(false);
+    };
+    const handleAddService = event => {
+
+        event.preventDefault();
+
+        const form = event.target;
+
+        const service_name = form.service_name.value;
+        const service_image = form.service_image.value;
+        const service_provider_email = form.service_provider_email.value;
+        const user_email = form.user_email.value;
+        const service_price = form.service_price.value;
+        const date = form.date.value;
+        const instruction = form.instruction.value;
+
+
+
+        const newService = { service_name, service_image, service_provider_email, user_email, service_price, date, instruction, service_provider_img }
+        console.log(newService);
+
+        // send data to the server
+        fetch('http://localhost:5000/bookings', {
+            method: "POST",
+            headers: {
+                'content-type': 'application/json'
+            },
+            body: JSON.stringify(newService)
+
+        })
+            .then(res => res.json())
+            .then(data => {
+                console.log(data);
+                if (data.insertedId) {
+                    // Swal.fire({
+                    //     title: 'Success!',
+                    //     text: 'Thank you for purchasing',
+                    //     icon: 'success',
+                    //     confirmButtonText: 'Cool'
+                    // })
+                    setShowSuccessAlert(true);
+
+                }
+                form.reset();
+
+            })
+
+
     }
 
-   
     return (
         <>
             <div className=" my-4 shadow-lg mx-auto p-8  grid grid-cols-1 justify-center items-center" style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
@@ -34,7 +85,8 @@ const ServiceDetailsCard = () => {
                                     <h1 className="text-2xl text-gray-500 font-bold"></h1>
                                     <p className="pt-6">{service_description}</p>
                                     <p className="pt-2">Service Price: {service_price}</p>
-                                    <button onClick={openModal} className="btn mt-2 btn-block  bg-[#cee3db] text-black font-bold">Book Now</button>
+                                    <button className="btn mt-2 btn-block bg-[#cee3db] text-black font-bold" onClick={() => document.getElementById('my_modal_4').showModal()}>Book Now</button>
+                                    {/* <button onClick={openModal} className="btn mt-2 btn-block bg-[#cee3db] text-black font-bold">Book Now</button> */}
 
                                 </div>
                             </div>
@@ -58,42 +110,106 @@ const ServiceDetailsCard = () => {
                 </div>
             </div>
 
-            {/* Open the modal using document.getElementById('ID').showModal() method */}
-            <dialog ref={modalRef} className="modal modal-bottom sm:modal-middle">
-                <div className="rounded-lg bg-orange-50 py-4 px-8">
-                    <h2 className="text-center text-4xl my-10">Update Item</h2>
-                    <div className="modal-action">
-                        <form  method="dialog" className="flex flex-col justify-center items-center">
-                            <div className="flex flex-col justify-center items-center">
-                                <div className="flex items-center justify-center">
-                                    <input className="input-text" type="text" name="foodName" placeholder="Food Name"  required />
-                                    <input className="input-text" type="text" name="foodImage" placeholder="Food Image"  />
+            {/* Modal */}
+            {/* You can open the modal using document.getElementById('ID').showModal() method */}
+            {/* <button className="btn" onClick={() => document.getElementById('my_modal_4').showModal()}>open modal</button> */}
+            <dialog id="my_modal_4" className="modal">
+                <div className="card mt-40 p-24 w-3/4 mx-auto my-10 bg-base-100 shadow-xl " style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
+                    <div className="  ">
+                        <h2 className="text-xl md:text-3xl text-center pb-10 font-extrabold">Purchase This Service</h2>
+                        <form onSubmit={handleAddService}>
+                            {/* service name and image row */}
+                            <div className="md:flex mb-8">
+                                <div className="form-control md:w-1/2">
+                                    <label className="label">
+                                        <span className="label-text">Service Name</span>
+                                    </label>
+                                    <label className="input-group">
+                                        <input name="service_name" value={service_name} type="text" required placeholder="enter service name" className="input input-bordered w-full" />
+                                    </label>
                                 </div>
-                                <div className="flex items-center justify-center">
-                                    <input className="input-text" type="text" name="foodCategory" placeholder="Food Category" required />
-                                    <input className="input-text" type="text" name="quantity" placeholder="Quantity"  />
-                                </div>
-                                <div>
-                                    <input className="input-text" type="text" name="price" placeholder="Price"required />
-                                    <input className="input-text" type="text" name="addBy" placeholder="Add By"  required />
-                                </div>
-                                <div>
-                                    <input className="input-text" type="text" name="foodOrigin" placeholder="Food Origin" required />
-                                    <input className="input-text" type="text" name="shortDescription" placeholder="Short Description"  required />
+                                <div className="form-control md:w-1/2 ml-0 md:ml-4">
+                                    <label className="label">
+                                        <span className="label-text">Service Image</span>
+                                    </label>
+                                    <label className="input-group">
+                                        <input name="service_image" value={service_image} type="text" required placeholder=
+                                            "enter service image url here" className="input input-bordered w-full" />
+                                    </label>
                                 </div>
                             </div>
-                            <div className="my-10 flex justify-center items-center gap-16">
-                                <button className="bg-orange-300 cursor-pointer rounded-lg bg-opacity-60 hover:bg-opacity-80 px-14 py-4 border-none flex justify-center items-center">
-                                    <input className="text-[22px]" type="submit" value="Update" />
-                                </button>
-                                <button onClick={closeModal()} className="bg-red-400 cursor-pointer rounded-lg bg-opacity-60 hover:bg-opacity-80 px-14 py-4 border-none flex justify-center items-center">
-                                    <div className="text-[22px]">Cancel</div>
-                                </button>
+
+                            {/* service provider email and user email row */}
+                            <div className="md:flex mb-8">
+                                <div className="form-control md:w-1/2">
+                                    <label className="label">
+                                        <span className="label-text">User Email</span>
+                                    </label>
+                                    <label className="input-group">
+                                        <input name="user_email" type="text" required placeholder="enter user email" value={user?.email} className="input input-bordered w-full" />
+                                    </label>
+                                </div>
+                                <div className="form-control md:w-1/2 ml-0 md:ml-4">
+                                    <label className="label">
+                                        <span className="label-text">Provider Email</span>
+                                    </label>
+                                    <label className="input-group">
+                                        <input name="service_provider_email" type="text" required placeholder=
+                                            "enter service image url here" value={service_provider_email} className="input input-bordered w-full" />
+                                    </label>
+                                </div>
                             </div>
+                            {/*  price and date row */}
+                            <div className="md:flex mb-8">
+                                <div className="form-control md:w-1/2">
+                                    <label className="label">
+                                        <span className="label-text">Service Price</span>
+                                    </label>
+                                    <label className="input-group">
+                                        <input name="service_price" value={service_price} type="text" required placeholder="enter the price of the service" className="input input-bordered w-full" />
+                                    </label>
+                                </div>
+                                <div className="form-control md:w-1/2 ml-0 md:ml-4">
+                                    <label className="label">
+                                        <span className="label-text">Service Taking Date</span>
+                                    </label>
+                                    <label className="input-group">
+                                        <input name="date" type="text" required placeholder="enter the date on which you want this service" className="input input-bordered w-full" />
+                                    </label>
+                                </div>
+                            </div>
+                            {/* special instruction row */}
+                            <div className="mb-8">
+                                <div className="form-control w-full">
+                                    <label className="label">
+                                        <span className="label-text">Special Instruction</span>
+                                    </label>
+                                    <label className="input-group">
+                                        <input name="instruction" type="text" required placeholder="enter any suggestion: anything like address, area, customized service plan" className="input input-bordered w-full" />
+                                    </label>
+                                </div>
+
+                            </div>
+                            <input className="btn btn-block text-black font-bold bg-[#cee3db] " type="submit" value="Purchase This Service" />
+                        </form>
+                    </div>
+                    <div className=" w-full">
+                        <form method="dialog">
+                            {/* if there is a button, it will close the modal */}
+                            <button className="btn  btn-block text-black font-bold bg-[#cee3db] " >Close</button>
                         </form>
                     </div>
                 </div>
             </dialog>
+            {showSuccessAlert && (
+                <div className="sweet-alert-popup" style={{ position: 'fixed', top: '50%', left: '50%', transform: 'translate(-50%, -50%)', zIndex: 9999, background: 'white', padding: '20px', border: '1px solid #ccc', boxShadow: '0 4px 8px rgba(0,0,0,0.2)' }}>
+                    <h3 style={{ color: 'green', textAlign: 'center' }}>Success!</h3>
+                    <p style={{ textAlign: 'center' }}>Thank you for purchasing</p>
+                    <button onClick={() => setShowSuccessAlert(false)}>OK</button>
+                </div>
+            )}
+
+
         </>
     );
 };

@@ -3,7 +3,6 @@ import Main from "../Layout/Main";
 import Home from "../Pages/Home/Home";
 import Login from "../Pages/Login/Login";
 import Registration from "../Pages/Registration/Registration";
-import Dashboard from "../Pages/Dashboard/Dashboard";
 import Services from "../Pages/Services/Services";
 import ErrorElement from "../ErrorElement/ErrorElement";
 import PrivateRoute from "../PrivateRoute/PrivateRoute";

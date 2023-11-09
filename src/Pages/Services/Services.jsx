@@ -25,7 +25,7 @@ const Services = () => {
             <div className="m-10 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center">
                 {
                     services.slice(0, displayedServices).map(service => <AllServiceCard
-                        key={service.service_id}
+                        key={service._id}
                         service={service}
                     > </AllServiceCard>)
                 }
