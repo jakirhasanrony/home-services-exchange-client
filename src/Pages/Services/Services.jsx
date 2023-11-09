@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 
 import AllServiceCard from "./AllServiceCard/AllServiceCard";
+import { Helmet } from "react-helmet";
 
 
 const Services = () => {
@@ -31,29 +32,35 @@ const Services = () => {
     };
 
     return (
-        <div className="my-10">
-            <div className="container mx-auto rounded-lg h-[100px] bg-green-100 flex justify-center items-center">
-                <input value={query} onChange={e => setQuery(e.target.value)} className="w-[800px] py-3 px-4 rounded-lg focus:outline-none" type="text" placeholder="Search" />
-            </div>
-            <div className="m-10 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center">
-                {
-                    filteredServices.slice(0, displayedServices).map(service => <AllServiceCard
-                        key={service._id}
-                        service={service}
-                    > </AllServiceCard>)
-                }
-            </div>
-            {!showAllServices && services.length > displayedServices && (
-                <div className="text-center">
-                    <button
-                        onClick={handleShowAllServices}
-                        className="btn btn-outline bg-black text-white w-1/2"
-                    >
-                        More Services
-                    </button>
+        <>
+            <Helmet>
+                <meta charSet='utf-8' />
+                <title>HomeHelpHub | Services</title>
+            </Helmet>
+            <div className="my-10">
+                <div className="container mx-auto rounded-lg h-[100px] bg-green-100 flex justify-center items-center">
+                    <input value={query} onChange={e => setQuery(e.target.value)} className="w-[800px] py-3 px-4 rounded-lg focus:outline-none" type="text" placeholder="Search" />
                 </div>
-            )}
-        </div>
+                <div className="m-10 lg:px-28 grid grid-cols-1 md:grid-cols-2 gap-6 justify-center items-center">
+                    {
+                        filteredServices.slice(0, displayedServices).map(service => <AllServiceCard
+                            key={service._id}
+                            service={service}
+                        > </AllServiceCard>)
+                    }
+                </div>
+                {!showAllServices && services.length > displayedServices && (
+                    <div className="text-center">
+                        <button
+                            onClick={handleShowAllServices}
+                            className="btn btn-outline bg-black text-white w-1/2"
+                        >
+                            More Services
+                        </button>
+                    </div>
+                )}
+            </div>
+        </>
     );
 };
 

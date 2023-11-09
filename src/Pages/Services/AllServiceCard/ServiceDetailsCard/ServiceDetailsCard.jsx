@@ -2,6 +2,7 @@ import { useContext, useState } from "react";
 import { Link, useLoaderData } from "react-router-dom";
 import { AuthContext } from "../../../../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import { Helmet } from "react-helmet";
 
 
 const ServiceDetailsCard = () => {
@@ -74,6 +75,10 @@ const ServiceDetailsCard = () => {
 
     return (
         <>
+            <Helmet>
+                <meta charSet='utf-8' />
+                <title>HomeHelpHub | ServiceDetails</title>
+            </Helmet>
             <div className=" my-4 shadow-lg mx-auto p-8  grid grid-cols-1 justify-center items-center" style={{ background: 'linear-gradient(to right, #c2e0ff, #f0f0f0)' }}>
                 <div>
                     <div className="flex flex-wrap justify-center items-center ">
