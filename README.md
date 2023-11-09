@@ -1,4 +1,4 @@
-### Live Link:https://home-services-exchange.web.app/myAddedServices
+### Live Link:https://home-services-exchange.web.app/
 ### Features
 1. **User Registration and Login:**
    - Users can register for an account to become service providers or help-seekers.
