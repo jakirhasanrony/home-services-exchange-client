@@ -1,11 +1,26 @@
-
+import { Typewriter } from 'react-simple-typewriter'
 
 const MemberPortrait = () => {
     return (
         <div>
             <div className="w-3/4  p-6 mt-10 mx-auto">
-                <div className=" mb-8">
-                    <h2 className="text-2xl text-amber-700 font-bold text-center">Member Portrait</h2>
+                <div className=" mx-auto mb-8">
+                    <div className='flex justify-center items-center text-2xl text-amber-700 font-bold text-center'>
+                        <h1 style={{ paddingTop: '5rem', margin: 'auto 0', fontWeight: 'normal' }}>
+                        Member Portrait: {' '}
+                            <span style={{ color: 'red', fontWeight: 'bold' }}>
+                                <Typewriter
+                                    words={['Anderson Family - Denver, Colorado', 'Johnson Family - San Francisco, California']}
+                                    loop={20}
+                                    cursor
+                                    cursorStyle='_'
+                                    typeSpeed={70}
+                                    deleteSpeed={50}
+                                    delaySpeed={1000}
+                                />
+                            </span>
+                        </h1>
+                    </div>
 
                 </div>
                 <div className=" mb-8 mx-auto w-1/12 border border-[#cee3db] border-b-2">
