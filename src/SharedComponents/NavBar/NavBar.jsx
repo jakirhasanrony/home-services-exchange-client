@@ -27,13 +27,13 @@ const Navbar = () => {
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/'>Home</NavLink></li>
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/services'>Services</NavLink></li>
             <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/login'>Login</NavLink></li>
-            <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/myAddedServices'>My Added Services</NavLink></li>
+            {/* <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/myAddedServices'>My Added Services</NavLink></li> */}
             {/* <li><NavLink className="mr-2 text-lg font-bold text-gray-600" to='/dashboard/add-services'>Add Service</NavLink></li> */}
             {/* <li><button onClick={handleSignOut} className="btn md:text-lg font-bold text-gray-600">Logout</button></li> */}
             <li className="dropdown">
                 <Link className="dropdown-toggle text-lg font-bold text-gray-600">Dashboard</Link>
                 <ul className="menu dropdown-content mt-3 z-[1] p-2 shadow bg-base-100 rounded-box w-52">
-                    <li><NavLink to='/dashboard/my-services'>My Services</NavLink></li>
+                    <li><NavLink to='/dashboard/myAddedServices'>My Services</NavLink></li>
                     <li><NavLink to='/dashboard/add-services'>Add Services</NavLink></li>
                     <li><NavLink to='/dashboard/my-schedules'>My Schedules</NavLink></li>
                 </ul>

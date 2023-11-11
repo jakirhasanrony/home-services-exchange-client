@@ -7,7 +7,7 @@ import Swal from "sweetalert2";
 const MyAddedService = () => {
     const { user } = useContext(AuthContext);
     const [addedServices, setAddedServices] = useState([]);
-    const url = `http://localhost:5000/added-services?service_provider_email=${user?.email}`;
+    const url = `https://home-services-exchange-server.vercel.app/added-services?service_provider_email=${user?.email}`;
     useEffect(() => {
         fetch(url)
             .then(res => res.json())
@@ -26,7 +26,7 @@ const MyAddedService = () => {
             confirmButtonText: "Yes, delete it!"
         }).then((result) => {
             if (result.isConfirmed) {
-                fetch(`http://localhost:5000/services/${id}`, {
+                fetch(`https://home-services-exchange-server.vercel.app/services/${id}`, {
                     method: 'DELETE'
                 })
                     .then(res => res.json())
@@ -45,6 +45,7 @@ const MyAddedService = () => {
             }
         });
     };
+
 
 
 
