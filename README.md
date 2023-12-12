@@ -1,5 +1,5 @@
 # Technology: HTML, CSS, Tailwind, DaisyUI, React, Firebase, MongoDB
-### Live Link:https://home-services-exchange.web.app/
+### Live Link: https://wakeful-lumber.surge.sh/
 
 ### Features
 1. **User Registration and Login:**
